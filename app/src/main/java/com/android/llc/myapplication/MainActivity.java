@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 if (i == 0) {
                     optionImage.setBackgroundResource(R.drawable.ic_account);
                     findViewById(R.id.enrolment_mode).setVisibility(View.VISIBLE);
+                    findViewById(R.id.verification_mode).setVisibility(View.GONE);
                     Glide.with(MainActivity.this)
                             .load(R.drawable.boy)
                             .fitCenter()
@@ -118,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
                             .into((ImageView) findViewById(R.id.image_c));
                 } else {
                     findViewById(R.id.enrolment_mode).setVisibility(View.GONE);
+                    findViewById(R.id.verification_mode).setVisibility(View.VISIBLE);
                     optionImage.setBackgroundResource(R.drawable.ic_check);
                     Glide.with(MainActivity.this)
                             .load(R.drawable.boy)

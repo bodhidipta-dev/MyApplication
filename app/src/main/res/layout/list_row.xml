@@ -36,12 +36,20 @@
 
             <com.android.llc.myapplication.fontmod.Roboto_Medium
                 android:id="@+id/emp_name"
-                android:paddingTop="5dp"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Employee Name"
                 android:textSize="16sp"
                 android:textColor="#333333" />
+            <com.android.llc.myapplication.fontmod.Roboto_Light
+                android:id="@+id/template_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Template Id :123456"
+                android:textColor="#333333"
+                android:textSize="14sp" />
+
         </LinearLayout>
 
         <ImageView

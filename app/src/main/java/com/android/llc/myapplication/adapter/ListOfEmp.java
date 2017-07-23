@@ -56,11 +56,13 @@ public class ListOfEmp extends RecyclerView.Adapter<ListOfEmp.ViewHolder> {
             holder.contd_bacvk.setBackgroundColor(Color.parseColor("#0095ff"));
             holder.right_chev.setBackgroundResource(R.drawable.ic_right_chevron_white);
             holder.text_id.setTextColor(Color.parseColor("#ffffff"));
+            holder.template_id.setTextColor(Color.parseColor("#ffffff"));
             holder.emp_name.setTextColor(Color.parseColor("#ffffff"));
         } else {
             holder.contd_bacvk.setBackgroundColor(Color.parseColor("#ffffff"));
             holder.right_chev.setBackgroundResource(R.drawable.ic_chevron_right);
             holder.text_id.setTextColor(Color.parseColor("#333333"));
+            holder.template_id.setTextColor(Color.parseColor("#333333"));
             holder.emp_name.setTextColor(Color.parseColor("#333333"));
         }
         Glide.with(mcontext)
@@ -73,7 +75,7 @@ public class ListOfEmp extends RecyclerView.Adapter<ListOfEmp.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView image_v, right_chev;
-        Roboto_Light text_id;
+        Roboto_Light text_id,template_id;
         Roboto_Medium emp_name;
         RelativeLayout contd_bacvk;
 
@@ -82,6 +84,7 @@ public class ListOfEmp extends RecyclerView.Adapter<ListOfEmp.ViewHolder> {
             image_v = (ImageView) itemView.findViewById(R.id.image_v);
             right_chev = (ImageView) itemView.findViewById(R.id.right_chev);
             text_id = (Roboto_Light) itemView.findViewById(R.id.text_id);
+            template_id = (Roboto_Light) itemView.findViewById(R.id.template_id);
             emp_name = (Roboto_Medium) itemView.findViewById(R.id.emp_name);
             contd_bacvk = (RelativeLayout) itemView.findViewById(R.id.contd_bacvk);
         }
