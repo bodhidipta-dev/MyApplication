@@ -23,6 +23,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -53,19 +55,30 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_IMAGE_CAPTURE = 5;
     private static final int PICK_IMAGE = 3;
     private String mCurrentPhotoPath = "";
-    private ImageView back_image, nav_camera;
+    private ImageView back_image, nav_camera, settings;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
         nav_camera = (ImageView) findViewById(R.id.nav_camera);
 
+        settings = (ImageView) findViewById(R.id.settings);
         back_image = (ImageView) findViewById(R.id.back_image);
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,SettingsActivity.class));
+            }
+        });
         nav_camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,28 +104,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClickItem(String tag) {
                 drawer.closeDrawer(GravityCompat.END);
                 switch (tag) {
-                    case "List":
+                    case "Preferences":
+                        Toast.makeText(MainActivity.this, "On click " + tag, Toast.LENGTH_SHORT).show();
+                        break;
+                    case "Database":
+                        Toast.makeText(MainActivity.this, "On click " + tag, Toast.LENGTH_SHORT).show();
+                        break;
+                    case "Masterdeta":
                         startActivity(new Intent(MainActivity.this, LisTActivity.class));
                         break;
-                    case "two":
+                    case "Activation":
                         Toast.makeText(MainActivity.this, "On click " + tag, Toast.LENGTH_SHORT).show();
                         break;
-                    case "Three":
-                        Toast.makeText(MainActivity.this, "On click " + tag, Toast.LENGTH_SHORT).show();
-                        break;
-                    case "Four":
-                        Toast.makeText(MainActivity.this, "On click " + tag, Toast.LENGTH_SHORT).show();
-                        break;
-                    case "Five":
-                        Toast.makeText(MainActivity.this, "On click " + tag, Toast.LENGTH_SHORT).show();
-                        break;
-                    case "Six":
-                        Toast.makeText(MainActivity.this, "On click " + tag, Toast.LENGTH_SHORT).show();
-                        break;
-                    case "Seven":
-                        Toast.makeText(MainActivity.this, "On click " + tag, Toast.LENGTH_SHORT).show();
-                        break;
-                    case "Eight":
+                    case "About":
                         Toast.makeText(MainActivity.this, "On click " + tag, Toast.LENGTH_SHORT).show();
                         break;
                 }
@@ -139,16 +143,16 @@ public class MainActivity extends AppCompatActivity {
                 if (i == 0) {
                     optionImage.setBackgroundResource(R.drawable.ic_account);
                     findViewById(R.id.enrolment_mode).setVisibility(View.VISIBLE);
-                    findViewById(R.id.verification_mode).setVisibility(View.GONE);
+                    //findViewById(R.id.verification_mode).setVisibility(View.GONE);
                     Glide.with(MainActivity.this)
                             .load(R.drawable.boy)
                             .fitCenter()
                             .crossFade()
-                            .bitmapTransform(new CropCircleTransformation(MainActivity.this))
+//                            .bitmapTransform(new CropCircleTransformation(MainActivity.this))
                             .into((ImageView) findViewById(R.id.image_c));
                 } else {
                     findViewById(R.id.enrolment_mode).setVisibility(View.GONE);
-                    findViewById(R.id.verification_mode).setVisibility(View.VISIBLE);
+                    //  findViewById(R.id.verification_mode).setVisibility(View.VISIBLE);
                     optionImage.setBackgroundResource(R.drawable.ic_check);
                     Glide.with(MainActivity.this)
                             .load(R.drawable.boy)

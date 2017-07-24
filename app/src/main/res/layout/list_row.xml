@@ -52,13 +52,12 @@
 
         </LinearLayout>
 
-        <ImageView
+        <CheckBox
             android:id="@+id/right_chev"
-            android:layout_width="35dp"
-            android:layout_height="45dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/ic_chevron_right" />
+            android:layout_centerVertical="true" />
     </RelativeLayout>
 
     <View

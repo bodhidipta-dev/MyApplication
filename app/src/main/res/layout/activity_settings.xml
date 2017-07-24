@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
+    android:background="@color/colorPrimary"
+    android:layout_height="match_parent">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/colorPrimaryDark">
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
 
         <com.android.llc.myapplication.fontmod.Roboto_Medium
             android:layout_width="wrap_content"
@@ -22,26 +24,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#ececeb">
-            <ImageView
-                android:id="@+id/delete"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:layout_alignParentRight="true"
-                android:layout_gravity="right"
-                android:padding="14dp"
-                android:src="@drawable/ic_delete" />
         </RelativeLayout>
-
 
     </android.support.v7.widget.Toolbar>
 
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="#1a75ff"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="#333333"
+        app:tabTextColor="@color/colorAccent" />
+
     <View
         android:layout_width="match_parent"
-        android:layout_height="2px"
-        android:background="@color/colorAccent" />
+        android:layout_height="1px"
+        android:background="#c3c3c3" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/list_item"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/bookings_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent" />
 </LinearLayout>

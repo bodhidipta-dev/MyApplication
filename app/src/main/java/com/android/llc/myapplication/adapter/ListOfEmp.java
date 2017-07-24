@@ -53,28 +53,20 @@ public class ListOfEmp extends RecyclerView.Adapter<ListOfEmp.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         if (position == selected) {
-            holder.contd_bacvk.setBackgroundColor(Color.parseColor("#0095ff"));
-            holder.right_chev.setBackgroundResource(R.drawable.ic_right_chevron_white);
-            holder.text_id.setTextColor(Color.parseColor("#ffffff"));
-            holder.template_id.setTextColor(Color.parseColor("#ffffff"));
-            holder.emp_name.setTextColor(Color.parseColor("#ffffff"));
+            holder.contd_bacvk.setBackgroundColor(Color.parseColor("#ececeb"));
         } else {
             holder.contd_bacvk.setBackgroundColor(Color.parseColor("#ffffff"));
-            holder.right_chev.setBackgroundResource(R.drawable.ic_chevron_right);
-            holder.text_id.setTextColor(Color.parseColor("#333333"));
-            holder.template_id.setTextColor(Color.parseColor("#333333"));
-            holder.emp_name.setTextColor(Color.parseColor("#333333"));
         }
         Glide.with(mcontext)
                 .load(R.drawable.boy)
                 .fitCenter()
                 .crossFade()
-                .bitmapTransform(new CropCircleTransformation(mcontext))
+              //  .bitmapTransform(new CropCircleTransformation(mcontext))
                 .into(holder.image_v);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView image_v, right_chev;
+        ImageView image_v;
         Roboto_Light text_id,template_id;
         Roboto_Medium emp_name;
         RelativeLayout contd_bacvk;
@@ -82,7 +74,7 @@ public class ListOfEmp extends RecyclerView.Adapter<ListOfEmp.ViewHolder> {
         public ViewHolder(View itemView) {
             super(itemView);
             image_v = (ImageView) itemView.findViewById(R.id.image_v);
-            right_chev = (ImageView) itemView.findViewById(R.id.right_chev);
+
             text_id = (Roboto_Light) itemView.findViewById(R.id.text_id);
             template_id = (Roboto_Light) itemView.findViewById(R.id.template_id);
             emp_name = (Roboto_Medium) itemView.findViewById(R.id.emp_name);

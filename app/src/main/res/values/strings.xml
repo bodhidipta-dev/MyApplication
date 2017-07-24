@@ -8,13 +8,10 @@
 
 
     <string-array name="navigation_item">
-        <item>List</item>
-        <item>two</item>
-        <item>Three</item>
-        <item>Four</item>
-        <item>Five</item>
-        <item>Six</item>
-        <item>Seven</item>
-        <item>Eight</item>
+        <item>Preferences</item>
+        <item>Database</item>
+        <item>Masterdeta</item>
+        <item>Activation</item>
+        <item>About</item>
     </string-array>
 </resources>

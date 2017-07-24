@@ -3,23 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:id="@+id/back_image"
         android:layout_marginBottom="70dp"
-        android:background="@drawable/img"/>
+        android:background="@drawable/img"
+        android:id="@+id/back_image"
+        android:scaleType="centerCrop" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/overlay"
         android:orientation="vertical"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:animateLayoutChanges="true"
-        android:background="@drawable/overlay"
-        android:layout_alignParentBottom="true"
         android:paddingTop="10dp"
         android:visibility="visible">
 
@@ -96,101 +97,107 @@
             android:visibility="visible">
 
             <LinearLayout
-                android:id="@+id/enrolment_mode"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_height="150dp"
                 android:layout_marginBottom="15dp"
+                android:orientation="horizontal"
                 android:visibility="visible">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible">
-
-                    <EditText
-                        android:id="@+id/search_input_taker"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_alignBottom="@+id/search_employee"
-                        android:background="@android:color/transparent"
-                        android:hint="Enter Employee Id"
-                        android:paddingRight="30dp"
-                        android:textColor="#ffffff"
-                        android:textColorHint="#ffffff"
-                        android:textSize="14sp" />
-
-                    <ImageView
-                        android:id="@+id/search_employee"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentEnd="true"
-                        android:padding="8dp"
-                        android:src="@drawable/ic_search" />
-                </RelativeLayout>
-
-                <View
-                    android:id="@+id/view"
-                    android:layout_width="match_parent"
-                    android:layout_height="2px"
-                    android:layout_marginBottom="10dp"
-                    android:background="#ffffff" />
 
                 <LinearLayout
-                    android:id="@+id/main_info_contd"
+                    android:id="@+id/enrolment_mode"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:visibility="visible"
                     android:weightSum="3">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.5">
+                        android:layout_weight="0.5"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_centerInParent="true"
-                            android:background="@drawable/circle_yellow" />
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
 
-                        <ImageView
-                            android:id="@+id/image_c"
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_centerInParent="true" />
-                    </RelativeLayout>
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/sqare_green"
+                                android:layout_centerInParent="true" />
+
+                            <ImageView
+                                android:id="@+id/image_c"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
+                        <com.android.llc.myapplication.fontmod.Roboto_Regular
+                            android:id="@+id/id_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="ID "
+                            android:textColor="#ffffff"
+                            android:textSize="14sp" />
+
+                        <com.android.llc.myapplication.fontmod.Roboto_Light
+                            android:id="@+id/emp_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLength="6"
+                            android:maxLines="1"
+                            android:text="123456"
+                            android:textColor="#ffffff"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1.8"
+                        android:layout_weight="2.5"
                         android:orientation="vertical"
                         android:paddingLeft="5dp">
 
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:visibility="visible">
 
-                            <com.android.llc.myapplication.fontmod.Roboto_Regular
-                                android:id="@+id/id_title"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="ID: "
+                            <EditText
+                                android:id="@+id/search_input_taker"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_alignBottom="@+id/search_employee"
+                                android:background="@android:color/transparent"
+                                android:hint="Enter Employee Id"
+                                android:maxLength="8"
+                                android:paddingRight="30dp"
                                 android:textColor="#ffffff"
+                                android:textColorHint="#ffffff"
                                 android:textSize="14sp" />
 
-                            <com.android.llc.myapplication.fontmod.Roboto_Light
-                                android:id="@+id/emp_id"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:maxLines="1"
-                                android:text="Employee ID here"
-                                android:textColor="#ffffff"
-                                android:textSize="14sp" />
-                        </LinearLayout>
+                            <ImageView
+                                android:id="@+id/search_employee"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_alignParentEnd="true"
+                                android:padding="8dp"
+                                android:src="@drawable/ic_search" />
+                        </RelativeLayout>
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="match_parent"
+                            android:layout_height="2px"
+                            android:layout_marginBottom="10dp"
+                            android:background="#ffffff" />
 
                         <com.android.llc.myapplication.fontmod.Roboto_Regular
                             android:id="@+id/name"
@@ -198,10 +205,9 @@
                             android:layout_height="wrap_content"
                             android:maxLines="1"
                             android:paddingBottom="5dp"
-                            android:paddingTop="5dp"
                             android:text="Employee Name Here"
                             android:textColor="#ffffff"
-                            android:textSize="16sp" />
+                            android:textSize="14sp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -214,338 +220,348 @@
                                 android:layout_height="wrap_content"
                                 android:text="Unit: "
                                 android:textColor="#ffffff"
-                                android:textSize="14sp" />
+                                android:textSize="12sp" />
 
                             <com.android.llc.myapplication.fontmod.Roboto_Light
                                 android:id="@+id/emp_unit"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Employee unit here"
+                                android:maxLines="1"
+                                android:text="Employee unit "
                                 android:textColor="#ffffff"
-                                android:textSize="14sp" />
+                                android:textSize="12sp" />
                         </LinearLayout>
 
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/enroll"
+                                android:paddingRight="5dp">
+
+                                <com.android.llc.myapplication.fontmod.Roboto_Regular
+                                    android:id="@+id/dept_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingBottom="5dp"
+                                    android:paddingTop="5dp"
+                                    android:text="Department: "
+                                    android:textColor="#ffffff"
+                                    android:textSize="12sp" />
+
+                                <com.android.llc.myapplication.fontmod.Roboto_Light
+                                    android:id="@+id/emp_dept"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@+id/dept_title"
+                                    android:maxLines="1"
+                                    android:paddingBottom="5dp"
+                                    android:paddingTop="5dp"
+                                    android:text="Employee department here"
+
+                                    android:textColor="#ffffff"
+                                    android:textSize="12sp" />
+
+                                <com.android.llc.myapplication.fontmod.Roboto_Regular
+                                    android:id="@+id/segn_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/dept_title"
+                                    android:text="Designation: "
+                                    android:textColor="#ffffff"
+                                    android:textSize="12sp" />
+
+                                <com.android.llc.myapplication.fontmod.Roboto_Light
+                                    android:id="@+id/emp_desn"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@+id/segn_title"
+                                    android:layout_alignTop="@+id/segn_title"
+                                    android:layout_toRightOf="@+id/segn_title"
+                                    android:maxLines="1"
+                                    android:text="Employee deignation here"
+                                    android:textColor="#ffffff"
+                                    android:textSize="12sp" />
+                            </RelativeLayout>
+
                             <com.android.llc.myapplication.fontmod.Roboto_Regular
-                                android:id="@+id/dept_title"
+                                android:id="@+id/enroll"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:background="#1a75ff"
+                                android:gravity="center"
                                 android:paddingBottom="5dp"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
                                 android:paddingTop="5dp"
-                                android:text="Department: "
+                                android:text="Enroll"
                                 android:textColor="#ffffff"
-                                android:textSize="14sp" />
+                                android:textSize="14sp"
+                                app:textAllCaps="true" />
+                        </RelativeLayout>
 
-                            <com.android.llc.myapplication.fontmod.Roboto_Light
-                                android:id="@+id/emp_dept"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:maxLines="1"
-                                android:paddingBottom="5dp"
-                                android:paddingTop="5dp"
-                                android:text="Employee department here"
 
-                                android:textColor="#ffffff"
-                                android:textSize="14sp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <com.android.llc.myapplication.fontmod.Roboto_Regular
-                                android:id="@+id/segn_title"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Designation: "
-                                android:textColor="#ffffff"
-                                android:textSize="14sp" />
-
-                            <com.android.llc.myapplication.fontmod.Roboto_Light
-                                android:id="@+id/emp_desn"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:maxLines="1"
-                                android:text="Employee deignation here"
-                                android:textColor="#ffffff"
-                                android:textSize="14sp" />
-                        </LinearLayout>
                     </LinearLayout>
 
-                    <RelativeLayout
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/verification_mode"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:visibility="visible"
+                    android:weightSum="4">
+
+                    <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".7">
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                        <com.android.llc.myapplication.fontmod.Roboto_Regular
+                        <RelativeLayout
                             android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="52dp"
+                                android:layout_height="52dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/circle_green" />
+
+                            <ImageView
+                                android:id="@+id/verified_image1"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:background="@color/colorAccent"
                             android:gravity="center"
-                            android:padding="10dp"
-                            android:text="Enroll"
+                            android:orientation="horizontal"
+                            android:paddingTop="5dp">
+
+                            <com.android.llc.myapplication.fontmod.Roboto_Regular
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:text="ID :"
+                                android:textColor="#ffffff"
+                                android:textSize="10sp" />
+
+                            <com.android.llc.myapplication.fontmod.Roboto_Regular
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:text="Id here"
+                                android:textColor="#ffffff"
+                                android:textSize="10sp" />
+                        </LinearLayout>
+
+                        <com.android.llc.myapplication.fontmod.Roboto_Regular
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+
+                            android:text="Employee Name"
                             android:textColor="#ffffff"
-                            android:textSize="14sp"
-                            app:textAllCaps="true" />
-                    </RelativeLayout>
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1px"
+                        android:layout_height="100dp"
+                        android:background="#ffffff" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="52dp"
+                                android:layout_height="52dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/circle_blue" />
+
+                            <ImageView
+                                android:id="@+id/verified_image2"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingTop="5dp">
+
+                            <com.android.llc.myapplication.fontmod.Roboto_Regular
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:text="ID :"
+                                android:textColor="#ffffff"
+                                android:textSize="10sp" />
+
+                            <com.android.llc.myapplication.fontmod.Roboto_Regular
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:text="Id here"
+                                android:textColor="#ffffff"
+                                android:textSize="10sp" />
+                        </LinearLayout>
+
+                        <com.android.llc.myapplication.fontmod.Roboto_Regular
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+                            android:text="Employee Name"
+                            android:textColor="#ffffff"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="52dp"
+                                android:layout_height="52dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/circle_yellow" />
+
+                            <ImageView
+                                android:id="@+id/verified_image3"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingTop="5dp">
+
+                            <com.android.llc.myapplication.fontmod.Roboto_Regular
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:text="ID :"
+                                android:textColor="#ffffff"
+                                android:textSize="10sp" />
+
+                            <com.android.llc.myapplication.fontmod.Roboto_Regular
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:text="Id here"
+                                android:textColor="#ffffff"
+                                android:textSize="10sp" />
+                        </LinearLayout>
+
+                        <com.android.llc.myapplication.fontmod.Roboto_Regular
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+                            android:text="Employee Name"
+                            android:textColor="#ffffff"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="52dp"
+                                android:layout_height="52dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/circle_gray" />
+
+                            <ImageView
+                                android:id="@+id/verified_image4"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingTop="5dp">
+
+                            <com.android.llc.myapplication.fontmod.Roboto_Regular
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:text="ID :"
+                                android:textColor="#ffffff"
+                                android:textSize="10sp" />
+
+                            <com.android.llc.myapplication.fontmod.Roboto_Regular
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:text="Id here"
+                                android:textColor="#ffffff"
+                                android:textSize="10sp" />
+                        </LinearLayout>
+
+                        <com.android.llc.myapplication.fontmod.Roboto_Regular
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+                            android:text="Employee Name"
+                            android:textColor="#ffffff"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
 
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/verification_mode"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:visibility="gone"
-                android:weightSum="4">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:layout_width="52dp"
-                            android:layout_height="52dp"
-                            android:layout_centerInParent="true"
-                            android:background="@drawable/circle_green" />
-
-                        <ImageView
-                            android:id="@+id/verified_image1"
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_centerInParent="true" />
-                    </RelativeLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:paddingTop="5dp">
-
-                        <com.android.llc.myapplication.fontmod.Roboto_Regular
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="10dp"
-                            android:text="ID :"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
-
-                        <com.android.llc.myapplication.fontmod.Roboto_Regular
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="10dp"
-                            android:text="Id here"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
-                    </LinearLayout>
-
-                    <com.android.llc.myapplication.fontmod.Roboto_Regular
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="5dp"
-
-                        android:text="Employee Name"
-                        android:textColor="#ffffff"
-                        android:textSize="10sp" />
-                </LinearLayout>
-
-                <View
-                    android:layout_width="1px"
-                    android:layout_height="100dp"
-                    android:background="#ffffff" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:layout_width="52dp"
-                            android:layout_height="52dp"
-                            android:layout_centerInParent="true"
-                            android:background="@drawable/circle_blue" />
-
-                        <ImageView
-                            android:id="@+id/verified_image2"
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_centerInParent="true" />
-                    </RelativeLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:paddingTop="5dp">
-
-                        <com.android.llc.myapplication.fontmod.Roboto_Regular
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="10dp"
-                            android:text="ID :"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
-
-                        <com.android.llc.myapplication.fontmod.Roboto_Regular
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="10dp"
-                            android:text="Id here"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
-                    </LinearLayout>
-
-                    <com.android.llc.myapplication.fontmod.Roboto_Regular
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="5dp"
-                        android:text="Employee Name"
-                        android:textColor="#ffffff"
-                        android:textSize="10sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:layout_width="52dp"
-                            android:layout_height="52dp"
-                            android:layout_centerInParent="true"
-                            android:background="@drawable/circle_yellow" />
-
-                        <ImageView
-                            android:id="@+id/verified_image3"
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_centerInParent="true" />
-                    </RelativeLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:paddingTop="5dp">
-
-                        <com.android.llc.myapplication.fontmod.Roboto_Regular
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="10dp"
-                            android:text="ID :"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
-
-                        <com.android.llc.myapplication.fontmod.Roboto_Regular
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="10dp"
-                            android:text="Id here"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
-                    </LinearLayout>
-
-                    <com.android.llc.myapplication.fontmod.Roboto_Regular
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="5dp"
-                        android:text="Employee Name"
-                        android:textColor="#ffffff"
-                        android:textSize="10sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:layout_width="52dp"
-                            android:layout_height="52dp"
-                            android:layout_centerInParent="true"
-                            android:background="@drawable/circle_gray" />
-
-                        <ImageView
-                            android:id="@+id/verified_image4"
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_centerInParent="true" />
-                    </RelativeLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:paddingTop="5dp">
-
-                        <com.android.llc.myapplication.fontmod.Roboto_Regular
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="10dp"
-                            android:text="ID :"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
-
-                        <com.android.llc.myapplication.fontmod.Roboto_Regular
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="10dp"
-                            android:text="Id here"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
-                    </LinearLayout>
-
-                    <com.android.llc.myapplication.fontmod.Roboto_Regular
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="5dp"
-                        android:text="Employee Name"
-                        android:textColor="#ffffff"
-                        android:textSize="10sp" />
-                </LinearLayout>
-
-
-            </LinearLayout>
         </LinearLayout>
 
 
