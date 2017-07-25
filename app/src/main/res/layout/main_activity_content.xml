@@ -195,7 +195,8 @@
                         <View
                             android:id="@+id/view"
                             android:layout_width="match_parent"
-                            android:layout_height="2px"
+                            android:layout_height="1px"
+                            android:alpha="0.5"
                             android:layout_marginBottom="10dp"
                             android:background="#ffffff" />
 

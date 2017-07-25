@@ -24,4 +24,20 @@
         <item name="android:windowIsFloating">false</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <!--EditText hint color-->
+        <item name="android:textColorHint">#6b6a6a</item>
+
+        <item name="colorControlNormal">#6b6a6a</item>
+        <!-- EditText line color when EditText on-focus-->
+        <item name="android:textSize">14sp</item>
+
+        <item name="colorControlActivated">#6b6a6a</item>
+        <!-- EditText line color when EditText in un-focus-->
+
+    </style>
+    <style name="GreenTextInputLayout" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#333333</item>
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>

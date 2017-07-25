@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,SettingsActivity.class));
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
             }
         });
         nav_camera.setOnClickListener(new View.OnClickListener() {
@@ -108,10 +108,10 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "On click " + tag, Toast.LENGTH_SHORT).show();
                         break;
                     case "Database":
-                        Toast.makeText(MainActivity.this, "On click " + tag, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this, LisTActivity.class));
                         break;
                     case "Masterdeta":
-                        startActivity(new Intent(MainActivity.this, LisTActivity.class));
+                        startActivity(new Intent(MainActivity.this, MasterData.class));
                         break;
                     case "Activation":
                         Toast.makeText(MainActivity.this, "On click " + tag, Toast.LENGTH_SHORT).show();

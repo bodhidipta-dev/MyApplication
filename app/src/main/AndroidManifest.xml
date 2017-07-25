@@ -55,6 +55,11 @@
             android:configChanges="orientation|screenLayout|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
+        <activity
+            android:name=".MasterData"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+            android:theme="@style/Theme.Transparent" />
     </application>
 
 </manifest>
