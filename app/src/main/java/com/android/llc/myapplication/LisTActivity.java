@@ -39,7 +39,7 @@ public class LisTActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         RecyclerView list_item = (RecyclerView) findViewById(R.id.list_item);
         list_item.setLayoutManager(new LinearLayoutManager(this));
